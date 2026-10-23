@@ -1,0 +1,24 @@
+interface:
+  display_name: "多元宇宙事前推演"
+  short_description: "Simulate three failed universes to expose hidden assumptions"
+  default_prompt: "Use $martin-multiverse-premortem to show me three parallel universes where my decision fails, and the hidden assumptions behind each failure."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+  degradation:
+    openai: "metadata-adapter"
+    claude: "neutral-source-plus-adapter"
+    generic: "neutral-source"

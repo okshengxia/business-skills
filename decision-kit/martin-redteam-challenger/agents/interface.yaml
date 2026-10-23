@@ -1,0 +1,24 @@
+interface:
+  display_name: "Martin Redteam Challenger"
+  short_description: "Stress-test ideas with structured red-team analysis"
+  default_prompt: "Use $martin-redteam-challenger to pressure-test my plan: surface assumptions, blind spots, counter-arguments, and a robustness score."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+  degradation:
+    openai: "metadata-adapter"
+    claude: "neutral-source-plus-adapter"
+    generic: "neutral-source"
