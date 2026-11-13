@@ -1,0 +1,24 @@
+interface:
+  display_name: "Martin 5Why Analyzer"
+  short_description: "Trace recurring problems to root causes with guided 5Why"
+  default_prompt: "Use $martin-5why-analyzer to trace my problem to its root cause, one why at a time."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+  degradation:
+    openai: "metadata-adapter"
+    claude: "neutral-source-plus-adapter"
+    generic: "neutral-source"
